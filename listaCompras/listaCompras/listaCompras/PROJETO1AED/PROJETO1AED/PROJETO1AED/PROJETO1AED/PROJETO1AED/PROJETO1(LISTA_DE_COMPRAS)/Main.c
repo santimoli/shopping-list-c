@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "Produto.h"
@@ -6,32 +6,6 @@
 #include "ListaDeCompra.h"
 #include "ArrayListaCompras.h"
 #include "ListaDeCompra.h"
-
-/*PROJETO NUMERO 1: ALGORITMOS E ESTRUTURAS DE DADOS
-
-PROJETO 1: LISTA DE COMPRAS
-
-AUTOR: SANTIAGO MOLINA SANCHEZ (25151)
-
-DATA: 28/04/2024
-
-NOTA:
-
-ESTOU A ENVIAR O PROJETO Nº 1 DE  ALGORITMOS E ESTRUTURAS DE DADOS COM AS DEVIDAS MELHORIAS PREVIAMENTE INFORMADAS SENDO ESTAS AS SEGUINTES:
-		->FOI LISTADAS AS LISTAS DE COMPRAS CORRETAMENTE.
-		->FORAM IMPLEMENTADAS AS FUNÇÕES DE MARCAR E DESMARCAR.
-		->FORAM ADICIONADAS FUNÇÕES PARA LIDAR COM AS EXCEÇÕES DO UTILIZADOR E TENTAR MANTER E CODIGO MAIS RIGIDO E SOLIDO.
-		->CODIGO DEVIDAMENTE COMENTADO
-
-É NECESSARIO REFERIR QUE SURGIRAM ALGUMAS DIFICULDADES EM RELAÇÃO À UTILIZAÇÃO DOS PONTEIROS PARA ESTRUTURAS, MAS QUE FORAM SENDO RESOLVIDAS AO LONGO DA
-REALIZAÇÃO DO PROJETO E A PARTIR DO MATERIAL TEORICA DAS AULAS.
-
-
-OBRIGADO.
-
-SANTIAGO MOLINA SANCHEZ (24151)
-
-*/
 
 char NomeProduto[2048]; // VARIAVEL GERAL PARA LER STRING DO TECLADO
 
@@ -53,13 +27,13 @@ void inserirNovoProdutoNoArrayProdutos() {
 	
 	TipoProduto[strcspn(TipoProduto, "\n")] = '\0';
 
-	Produto = criarProduto(NomeProduto,TipoProduto); //CHAMA A FUNÇÃO PARA PODER CRIAR O PRODUTO
+	Produto = criarProduto(NomeProduto,TipoProduto); //CHAMA A FUNï¿½ï¿½O PARA PODER CRIAR O PRODUTO
 
 	if (!InserirProdutoNoArrayProdutos(Produto)) { //SE NAO FOI INSERIDO NO ARRAY DE PRODUTOS, SIGNIFICA QUE ESTA A MEMORIA CHEIA
 	
 		printf("Memoria cheia!\n");
 		
-		apagarProduto(Produto); //É APAGADO O PRODUTO PARA NAO FICAR LIXO
+		apagarProduto(Produto); //ï¿½ APAGADO O PRODUTO PARA NAO FICAR LIXO
 	}
 
 }
@@ -71,10 +45,10 @@ void RetirarProduto() {
 
 	NomeProduto[strcspn(NomeProduto, "\n")] = '\0';
 
-	apagarProdutoDeArray(NomeProduto);// CHAMA A FUNÇÃO PARA APAGAR O PRODUTO DO ARRAY PRODUTOS
+	apagarProdutoDeArray(NomeProduto);// CHAMA A FUNï¿½ï¿½O PARA APAGAR O PRODUTO DO ARRAY PRODUTOS
 
 }
-void clearInputBuffer() { //FUNÇÃO IMPLEMENTADA PARA LIDAR COM O BUFFER DE ENTRADA
+void clearInputBuffer() { //FUNï¿½ï¿½O IMPLEMENTADA PARA LIDAR COM O BUFFER DE ENTRADA
 
 	int c;
 
@@ -118,9 +92,9 @@ void AdicionarNovaListaDeCompras(int n) {
 	
 	Nomelista[strcspn(Nomelista, "\n")] = '\0';
 
-	Lista = criarlistaCompra(Nomelista,n);// A LISTA É CRIADA
+	Lista = criarlistaCompra(Nomelista,n);// A LISTA ï¿½ CRIADA
 
-	if (!InserirListaComprasNoArrayListasDeCompras(Lista)) {//SE NAO É INSERIDA NO ARRAY DE LISTAS , A MEMORIA ESTA CHEIA
+	if (!InserirListaComprasNoArrayListasDeCompras(Lista)) {//SE NAO ï¿½ INSERIDA NO ARRAY DE LISTAS , A MEMORIA ESTA CHEIA
 		
 		printf("Memoria cheia!!");
 		
@@ -138,7 +112,7 @@ void ApagarListasDeCompras() {
 
 	ListaDeCompras[strcspn(ListaDeCompras, "\n")] = '\0';
 	
-	ApagarListaDeComprasDeArray(ListaDeCompras);//CHAMA A FUNÇÃO PARA APAGAR A LISTA DE COMPRAS DO ARRAY DE LISTA DE COMPRAS
+	ApagarListaDeComprasDeArray(ListaDeCompras);//CHAMA A FUNï¿½ï¿½O PARA APAGAR A LISTA DE COMPRAS DO ARRAY DE LISTA DE COMPRAS
 
 
 }
@@ -175,14 +149,14 @@ void AdicionarProdutosAlistaCompras() {
 
 	ptrProduto Produto = EncontrarProduto(NomeProduto);//VERIFICA SE FOI ENCONTRADO O PRODUTO
 
-	if (produtoJaInserido(Lista, NomeProduto)) {//CHAMA A FUNÇÃO PARA VERIFICA SE ESSE PRODUTO JA FOI INSERIDO ANTERIORMENTE NA LISTA DE COMPRAS 
+	if (produtoJaInserido(Lista, NomeProduto)) {//CHAMA A FUNï¿½ï¿½O PARA VERIFICA SE ESSE PRODUTO JA FOI INSERIDO ANTERIORMENTE NA LISTA DE COMPRAS 
 		
 		printf("Produto ja esta na lista de compras!\n");
 		
 		return;
 	}
 
-	if (Produto == NULL) { //  SE O PRODUTO NAO FOI ENCONTRADO, É PERGUNTADO AO USUARIO SE DESEJA CRIAR UM NOVO PRODUTO 
+	if (Produto == NULL) { //  SE O PRODUTO NAO FOI ENCONTRADO, ï¿½ PERGUNTADO AO USUARIO SE DESEJA CRIAR UM NOVO PRODUTO 
 		
 		char opcao;
 		
@@ -233,13 +207,13 @@ void AdicionarProdutosAlistaCompras() {
 		return;
 	}
 
-	InserirProdutoLista(Lista, Produto, quantidade);//CHAMA FUNÇÃO PARA INSERIR O PRODUTO NA LISTA DE COMPRAS DESEJADA
+	InserirProdutoLista(Lista, Produto, quantidade);//CHAMA FUNï¿½ï¿½O PARA INSERIR O PRODUTO NA LISTA DE COMPRAS DESEJADA
 }
 void ListarProdutosDeListaCompras(int nlistacompras) { 
 
 	char NomeLista[2048];
 
-	printf("Digite o nome da lista de compras que deseja listar os produtos:\n");//É PEDIDO O NOME DA LISTA PARA LISTAR OS PRODUTOS DESSA LISTA
+	printf("Digite o nome da lista de compras que deseja listar os produtos:\n");//ï¿½ PEDIDO O NOME DA LISTA PARA LISTAR OS PRODUTOS DESSA LISTA
 	
 	fgets(NomeLista, sizeof(NomeLista), stdin);
 	
@@ -255,7 +229,7 @@ void ListarProdutosDeListaCompras(int nlistacompras) {
 	}
 	printf("Produtos da lista de compras '%s':\n", NomeLista);
 	
-	listarProdutosDaLista(lista);//CHAMA A FUNÇÃO PARA LISTAR OS PRODUTOS DA  LISTA DE COMPRAS
+	listarProdutosDaLista(lista);//CHAMA A FUNï¿½ï¿½O PARA LISTAR OS PRODUTOS DA  LISTA DE COMPRAS
 }
 
 void RetirarProdutoLista() {
@@ -285,7 +259,7 @@ void RetirarProdutoLista() {
 
 	NomeProduto[strcspn(NomeProduto, "\n")] = '\0';
 
-	removerProdutoDaLista(lista, NomeProduto);//CHAMA A FUNÇÃO PARA REMOVER O PRODUTO DA LISTA (MAS NAO ELIMINA O PRODUTO)
+	removerProdutoDaLista(lista, NomeProduto);//CHAMA A FUNï¿½ï¿½O PARA REMOVER O PRODUTO DA LISTA (MAS NAO ELIMINA O PRODUTO)
 
 }
 void MarcarProdutoComoComprado() {
@@ -296,7 +270,7 @@ void MarcarProdutoComoComprado() {
 
 	char Loja[2048]; //VARIAVEL PARA GUARDAR A LOJA DO USUARIO
 
-	float preco; //VARIAVEL PARA GUARDAR O PREÇO DO USUARIO
+	float preco; //VARIAVEL PARA GUARDAR O PREï¿½O DO USUARIO
 
 
 	printf("Digite o nome da lista:\n");
@@ -314,7 +288,7 @@ void MarcarProdutoComoComprado() {
 		return;
 	}
 
-	printf("\nIndique o nome do produto que deseja marcar da lista:");//É PEDIDO O NOME DO PRODUTO DESEJADO PARA MARCAR COMO COMPRADO
+	printf("\nIndique o nome do produto que deseja marcar da lista:");//ï¿½ PEDIDO O NOME DO PRODUTO DESEJADO PARA MARCAR COMO COMPRADO
 
 	fgets(NomeProduto, sizeof(NomeProduto), stdin);
 
@@ -328,11 +302,11 @@ void MarcarProdutoComoComprado() {
 
 	Loja[strcspn(Loja, "\n")] = '\0';
 
-	printf("Indique o preco ao que foi comprado:");//PEDE O PREÇO AO QUE FOI COMPRADO
+	printf("Indique o preco ao que foi comprado:");//PEDE O PREï¿½O AO QUE FOI COMPRADO
 
 	scanf("%f", &preco);
 
-	if (preco <= 0.0) {//VERIFICA SE É UM PRODUTO VALIDO
+	if (preco <= 0.0) {//VERIFICA SE ï¿½ UM PRODUTO VALIDO
 
 		printf("Preco Invalido!!");
 		
@@ -340,7 +314,7 @@ void MarcarProdutoComoComprado() {
 	}
 	clearInputBuffer();//LIMPA OS CARATERES NAO DESEJADOS
 
-	marcarProdutoComprado(lista, NomeProduto, preco, Loja);//CHAMA A FUNÇÃO PARA MARCAR O PRODUTO COMO COMPRADO
+	marcarProdutoComprado(lista, NomeProduto, preco, Loja);//CHAMA A FUNï¿½ï¿½O PARA MARCAR O PRODUTO COMO COMPRADO
 }
 
 void DesmarcarProdutoComoComprado() {
@@ -365,16 +339,16 @@ void DesmarcarProdutoComoComprado() {
 
 	ptrProduto Produto = EncontrarProduto(NomeProduto);//ENCONTRA O PRODUTO PRETENDIDO
 
-	if (lista == NULL) {//VERIFICA SE O PONTEIRO NAO É NULO
+	if (lista == NULL) {//VERIFICA SE O PONTEIRO NAO ï¿½ NULO
 	
 		printf("Lista de compras nao encontrada!\n");
 		
 		return;
 	}
 
-	DesmarcarProdutoComprado(lista, NomeProduto);//CHAMA A FUNÇÃO PARA DESMARCAR O PRODUTO PRETENDIDO
+	DesmarcarProdutoComprado(lista, NomeProduto);//CHAMA A FUNï¿½ï¿½O PARA DESMARCAR O PRODUTO PRETENDIDO
 }
-int menu() {//MENU QUE É MOSTRADO AO UTILIZADOR PARA QUE POSSA ESCOLHAR A OPÇÃO SOLICITADA
+int menu() {//MENU QUE ï¿½ MOSTRADO AO UTILIZADOR PARA QUE POSSA ESCOLHAR A OPï¿½ï¿½O SOLICITADA
 
 	int opcao;
 
